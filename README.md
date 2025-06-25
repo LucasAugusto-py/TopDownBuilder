@@ -24,7 +24,7 @@ Crear una carpeta "resources" que tenga otra carpeta "graphviz":
 mkdir resources/graphviz
 ```
 
-Y arrastar el archivo "bin" que se descargó en el ZIP de Graphviz dentro de la carpeta Graphviz
+Y arrastar el archivo "bin" que se descargó en el ZIP de Graphviz dentro de la carpeta "graphviz"
 
 Por último instalar todas las dependencias:
 
@@ -41,3 +41,4 @@ pyinstaller --clean --noconfirm main.spec
 ```
 
 ## Proximamente para Linux...
+tengan paciencia :)
