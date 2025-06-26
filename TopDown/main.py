@@ -1,7 +1,19 @@
 from PySide6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton,
 QFileDialog, QMessageBox)
 from PySide6.QtCore import QSize
-import sys, pathlib
+import sys, pathlib, os
+
+def bootstrap_graphviz():
+    if hasattr(sys, "_MEIPASS"):
+        root = pathlib.Path(sys._MEIPASS)
+    else:
+        root = pathlib.Path(__file__).parent / "resources"
+    
+    gv_bin = root / "graphviz" / "bin"
+    os.environ["PATH"] = str(gv_bin) + os.pathsep + os.environ.get("PATH", "")
+    os.environ["GRAPHVIZ_DOT"] = str(gv_bin / "dot.exe")
+
+bootstrap_graphviz()
 
 class MainWindow(QMainWindow):
     def __init__(self):
